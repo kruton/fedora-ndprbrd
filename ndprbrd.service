@@ -1,0 +1,11 @@
+[Unit]
+Description=NDP Proxy Router Bridge Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/ndprbrd -d -p /var/run/ndprbrd/ndprbrd.pid
+Type=forking
+PIDFile=/var/run/ndprbrd/ndprbrd.pid
+
+[Install]
+WantedBy=multi-user.target
